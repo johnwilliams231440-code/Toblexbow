@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toblex - Professional Freelance Services</title>
+    <link rel="icon" type="image/x-icon" href="https://iili.io/KERUpls.md.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff0000;
+            --secondary: #000000;
+            --accent: #1a1a1a;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--text);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #cccccc;
+        }
+
+        /* Platform Logos Slider */
+        .platforms {
+            background-color: var(--accent);
+            padding: 30px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .platforms-container {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+
+        .platform-logo {
+            margin: 0 40px;
+            filter: grayscale(100%);
+            transition: filter 0.3s;
+        }
+
+        .platform-logo:hover {
+            filter: grayscale(0%);
+        }
+
+        .platform-logo img {
+            height: 40px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--accent);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.2);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .service-content p {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background-color: var(--accent);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            background-color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .contact-form {
+            background-color: var(--accent);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Telegram Scraper Section */
+        .scraper-section {
+            padding: 80px 0;
+            background-color: var(--secondary);
+        }
+
+        .scraper-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .scraper-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .scraper-content p {
+            color: #cccccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .scraper-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .scraper-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .scraper-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Work Proof Section */
+        .work-proof {
+            padding: 80px 0;
+            background-color: var(--accent);
+        }
+
+        .proof-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .proof-tab {
+            background-color: #333;
+            color: var(--text);
+            border: none;
+            padding: 12px 24px;
+            margin: 0 10px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .proof-tab.active {
+            background-color: var(--primary);
+        }
+
+        .proof-tab:hover {
+            background-color: #555;
+        }
+
+        .proof-tab.active:hover {
+            background-color: #cc0000;
+        }
+
+        .proof-content {
+            display: none;
+        }
+
+        .proof-content.active {
+            display: block;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .proof-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+        }
+
+        .proof-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .platform-logo {
+                margin: 0 20px;
+            }
+
+            .scraper-images {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .proof-tab {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="https://iili.io/KERUpls.md.png" alt="Toblex Logo">
+                <h1>Toblex</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#proof">Work Proof</a></li>
+                    <li><a href="#scraper">Telegram Scraper</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Professional Freelance Services</h2>
+            <p>I provide high-quality Telegram promotion, community management, social media marketing, and app development services to help your business grow.</p>
+            <a href="#services" class="btn">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Platform Logos -->
+    <section class="platforms">
+        <div class="platforms-container">
+            <div class="platform-logo">
+                <img src="https://iili.io/KEAeFhg.md.png" alt="Fiverr">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KEA9bKx.md.png" alt="Upwork">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KEAIhqQ.md.png" alt="Freelancer">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KERHX6J.md.png" alt="PeoplePerHour">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KEAeFhg.md.png" alt="Fiverr">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KEA9bKx.md.png" alt="Upwork">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KEAIhqQ.md.png" alt="Freelancer">
+            </div>
+            <div class="platform-logo">
+                <img src="https://iili.io/KERHX6J.md.png" alt="PeoplePerHour">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Services</h2>
+                <p>I offer a wide range of digital services to help businesses grow and succeed online.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Telegram Promotion">
+                    </div>
+                    <div class="service-content">
+                        <h3>Telegram Promotion</h3>
+                        <p>Increase your Telegram channel members and engagement with targeted promotion strategies.</p>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Community Management">
+                    </div>
+                    <div class="service-content">
+                        <h3>Telegram Community Management</h3>
+                        <p>Professional management of your Telegram community to ensure active engagement and growth.</p>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Media Promotion">
+                    </div>
+                    <div class="service-content">
+                        <h3>Social Media Promotion</h3>
+                        <p>Boost your brand visibility across all major social media platforms with targeted campaigns.</p>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bot Development">
+                    </div>
+                    <div class="service-content">
+                        <h3>Bot Development</h3>
+                        <p>Custom Telegram and social media bots to automate tasks and enhance user experience.</p>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="App Development">
+                    </div>
+                    <div class="service-content">
+                        <h3>App Development</h3>
+                        <p>Custom web and mobile applications tailored to your specific business needs.</p>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Marketing</h3>
+                        <p>Comprehensive digital marketing strategies to increase your online presence and conversions.</p>
+                        <a href="#contact" class="btn">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Portfolio</h2>
+                <p>Check out some of my recent work and successful projects.</p>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Portfolio items would go here -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 1">
+                    <div class="portfolio-overlay">
+                        <h3>Telegram Promotion</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 2">
+                    <div class="portfolio-overlay">
+                        <h3>Community Management</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 3">
+                    <div class="portfolio-overlay">
+                        <h3>Social Media Campaign</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 4">
+                    <div class="portfolio-overlay">
+                        <h3>Bot Development</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 5">
+                    <div class="portfolio-overlay">
+                        <h3>Mobile App</h3>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Project 6">
+                    <div class="portfolio-overlay">
+                        <h3>Marketing Strategy</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Proof Section -->
+    <section class="work-proof" id="proof">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Proof</h2>
+                <p>See examples of my work across different services.</p>
+            </div>
+            
+            <div class="proof-tabs">
+                <button class="proof-tab active" data-tab="telegram-promo">Telegram Promotion</button>
+                <button class="proof-tab" data-tab="community-mgmt">Community Management</button>
+                <button class="proof-tab" data-tab="social-media">Social Media Promotion</button>
+                <button class="proof-tab" data-tab="bot-dev">Bot Development</button>
+                <button class="proof-tab" data-tab="app-dev">App Development</button>
+            </div>
+            
+            <!-- Telegram Promotion Proof -->
+            <div class="proof-content active" id="telegram-promo-proof">
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Telegram Promotion Proof 1">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1633332755191-727763d43c2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Telegram Promotion Proof 2">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Telegram Promotion Proof 3">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Telegram Promotion Proof 4">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Telegram Promotion Proof 5">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Community Management Proof -->
+            <div class="proof-content" id="community-mgmt-proof">
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Management Proof 1">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Management Proof 2">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Management Proof 3">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Management Proof 4">
+                    </div>
+                    <div class="proof-item">
+                        <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Community Management Proof 5">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Add similar sections for other services -->
+            
+        </div>
+    </section>
+
+    <!-- Telegram Scraper Section -->
+    <section class="scraper-section" id="scraper">
+        <div class="container">
+            <div class="section-title">
+                <h2>Telegram Scraper</h2>
+                <p>Advanced Telegram data extraction and analysis tools for your marketing needs.</p>
+            </div>
+            <div class="scraper-container">
+                <div class="scraper-content">
+                    <h2>Professional Telegram Data Extraction</h2>
+                    <p>My custom Telegram scraper tools allow you to extract valuable data from Telegram channels, groups, and users for targeted marketing campaigns.</p>
+                    <p>With these tools, you can gather information about potential customers, analyze competitor channels, and identify trends in your niche.</p>
+                    <p>The scraper is capable of extracting member lists, message statistics, engagement metrics, and more to help you make data-driven decisions.</p>
+                    <a href="#contact" class="btn">Request Scraper Service</a>
+                </div>
+                <div class="scraper-images">
+                    <div class="scraper-image">
+                        <img src="https://iili.io/KEAeFhg.md.png" alt="Telegram Scraper Proof 1">
+                    </div>
+                    <div class="scraper-image">
+                        <img src="https://iili.io/KEA9bKx.md.png" alt="Telegram Scraper Proof 2">
+                    </div>
+                    <div class="scraper-image">
+                        <img src="https://iili.io/KEAIhqQ.md.png" alt="Telegram Scraper Proof 3">
+                    </div>
+                    <div class="scraper-image">
+                        <img src="https://iili.io/KERHX6J.md.png" alt="Telegram Scraper Proof 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to take your business to the next level? Contact me today!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>I'm always interested in new projects and opportunities. Whether you need Telegram promotion, community management, or custom development, I'm here to help.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>toblex79@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Available Worldwide</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-group input">
+                                <option value="">Select a service</option>
+                                <option value="telegram-promotion">Telegram Promotion</option>
+                                <option value="community-management">Telegram Community Management</option>
+                                <option value="social-media">Social Media Promotion</option>
+                                <option value="bot-development">Bot Development</option>
+                                <option value="app-development">App Development</option>
+                                <option value="telegram-scraper">Telegram Scraper</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Toblex</h3>
+                    <p>Professional freelance services for Telegram promotion, community management, and digital marketing.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Telegram Promotion</a></li>
+                        <li><a href="#">Community Management</a></li>
+                        <li><a href="#">Social Media Marketing</a></li>
+                        <li><a href="#">Bot Development</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Telegram Scraper</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#proof">Work Proof</a></li>
+                        <li><a href="#scraper">Telegram Scraper</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> toblex79@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Available Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Toblex. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Work Proof Tabs
+        document.querySelectorAll('.proof-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.proof-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.proof-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(`${tabId}-proof`).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
